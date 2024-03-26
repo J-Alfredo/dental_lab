@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../button/Button'
+import Link from 'next/link'
 
 export const Navbar = () => {
   return (
@@ -8,7 +9,9 @@ export const Navbar = () => {
 	>
 		<div className="flex justify-between p-4">
 			<div className="text-[2rem] leading-[3rem] tracking-tight font-bold text-black">
-				Gallardo
+				<Link href='/'>
+					Gallardo
+				</Link>
 			</div>
             <div className='flex justify-between p-4 space-x-5 text-dark'>
                 <a href="">Servicios</a>
