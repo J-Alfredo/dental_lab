@@ -13,10 +13,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model service {
+model Category {
+  id   String @id @default(uuid())
+  name String @unique
+
+  Service Service[]
+}
+
+model Service {
   id          String @id @default(uuid())
+  slug        String @unique
   title       String
   description String
   services    String
-  image       String
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  ServiceImage ServiceImage[]
+}
+
+model ServiceImage {
+  id  Int    @id @default(autoincrement())
+  url String
+
+  service   Service @relation(fields: [serviceId], references: [id])
+  serviceId String
 }
