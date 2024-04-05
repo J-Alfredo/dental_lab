@@ -1,18 +1,23 @@
-import Image from 'next/image';
-import { Navbar, Button, Pill, Card, Accordion, Footer } from "@/components/index";
+// import Image from 'next/image';
+import { Button, Pill, Card, Accordion, ServiciosGrid } from "@/components/index";
 import { FaCircleUser, FaComments, FaMicroscope } from "react-icons/fa6";
-
-
+import { getServices } from '@/actions';
+// import Link from 'next/link';
+import { initialData } from '@/seed/seed';
 
 export const metadata = {
   title: 'Labotarotio Dental Gallardo',
   description: 'Labotarotio Dental Gallardo',
 };
 
-export default function MainPage() {
+const services = initialData.services
+
+export default async function MainPage() {    
+  
+  // const services = await getServices();
+  
   return (
     <>
-      <Navbar />
       {/* Hero Section */}
       <section className=" flex items-center min-h-screen justify-center bg-slate-200">
         <div className="mx-auto max-w-[43rem]">
@@ -43,6 +48,12 @@ export default function MainPage() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h3>Pruebas</h3>
+        <ServiciosGrid
+          services ={services}
+        />
       </div>
       {/* Insights */}
       <div className="relative flex justify-center">
@@ -129,8 +140,6 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-      {/* footer */}
-      <Footer />
     </>
   );
 }

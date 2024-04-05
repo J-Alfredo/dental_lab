@@ -1,26 +1,26 @@
-
 interface SeedService {
-    slug: String;
-    title: String;
-    description: String;
+    slug: string;
+    title: string;
+    description: string;
     images: string[];
-    category: ValidTypes;
+    type: ValidTypes;
+    services: string;
 }
 
-type ValidTypes = 'Prótesis sobre implante' | 'Placas de ortodoncia' | 'Metal porcelana' | 'Libres de metal' | 'Prótesis removibles' | 'Temporales';
+type ValidTypes = 'prótesis sobre implante' | 'placas de ortodoncia' | 'metal porcelana' | 'libres de metal' | 'prótesis removibles' | 'temporales';
 
 interface SeedData {
     categories : string[];
-    products: SeedService[];
+    services: SeedService[];
 }
 
 
 
 export const initialData: SeedData = {
     categories: [
-        'Prótesis sobre implante','Placas de ortodoncia','Metal porcelana','Libres de metal','Prótesis removibles','Temporales'
+        'prótesis sobre implante','placas de ortodoncia','metal porcelana','libres de metal','prótesis removibles','temporales',
     ],
-    products: [
+    services: [
         {
             slug: 'Placas de ortodoncia',
             title: 'Placas de ortodoncia',
@@ -34,7 +34,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Temporales'
+            type: 'temporales',
+            services: ''
         },
         {
             slug: 'Coronas sobre implantes',
@@ -49,7 +50,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Prótesis sobre implante'
+            type: 'prótesis sobre implante',
+            services: ''
         },
         {
             slug: 'Puentes sobre implantes',
@@ -64,7 +66,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Prótesis sobre implante'
+            type: 'prótesis sobre implante',
+            services: ''
         },
         {
             slug: 'Coronas dentales',
@@ -79,7 +82,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Metal porcelana'
+            type: 'metal porcelana',
+            services: ''
         },
         {
             slug: 'Puentes dentales',
@@ -94,7 +98,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Metal porcelana'
+            type: 'metal porcelana',
+            services: ''
         },
         {
             slug: 'Prótesis Flexibles',
@@ -109,7 +114,8 @@ export const initialData: SeedData = {
                 '6.png',
                 'service-image.jpg',
             ],
-            category: 'Prótesis removibles'
+            type: 'prótesis removibles',
+            services: ''
         },
     ]
 };
